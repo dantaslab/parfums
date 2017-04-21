@@ -1,0 +1,63 @@
+#!/bin/bash
+
+cmd=`basename $0`
+group=${2:-1}
+
+if [ -z "$1" ] || [ "$1" == "-h" ]; then
+    cat <<EOF >&2
+
+Usage: $cmd JOBFILE
+
+    $cmd creates a muli-task job where each task is a line (or
+    group of lines) in JOBFILE.  It creates a script suitable
+    for piping to qsub.  Running $cmd without piping to qsub
+    will simply print out the generated qsub script.
+
+    Intended command usage:
+
+        $cmd JOBFILE | SBATCH [SBATCH_OPTS]
+
+    $cmd includes a reasonable default set of SBATCH_OPTS:
+
+    -n1 -N 1 --mem=8G
+
+    Feel free to override or add your own.  See the sbatch man
+    page for more info.
+
+    WARNING: Do not change or remove JOBFILE until job is complete.
+
+EOF
+    exit 1
+fi
+
+if [ ! -f $1 ]; then
+    echo "Error: $1 does not exist."
+    exit 1
+fi
+
+wc=`wc -l $1|awk '{ print $1 }'`
+
+cat <<EOF
+#!/bin/bash
+#SBATCH -n 1
+#SBATCH --mem=8G
+#SBATCH -J `basename $1`
+#SBATCH --array=1-$wc%5000
+
+echo "Started: \`date\`" >&2
+echo "Host: \`hostname\`" >&2
+echo -n "Command: ">&2; sed -n "\${SLURM_ARRAY_TASK_ID}p" $1 >&2
+time sed -n "\${SLURM_ARRAY_TASK_ID}p" $1 | bash
+echo "Finished: \`date\`" >&2
+
+# ---------------------------------------------
+#
+# $cmd is meant to be used with slurm
+#
+# Intended command usage:
+#
+#    $cmd $* | sbatch [ SBATCH OPTS ]
+#
+# For more info: $cmd -h
+# ---------------------------------------------
+EOF

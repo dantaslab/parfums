@@ -1,0 +1,5 @@
+mgm_model_fp	/opt/apps/labs/gdlab/software/metagenemark/2.10/MetaGeneMark_v1.mod
+resfam_database_fp	/scratch/gdlab/databases/hmm/Resfams/1.2/ResFams.hmm
+resfam_only_database_fp	/scratch/gdlab/databases/hmm/Resfams/1.2/ResFams-only.hmm
+pfam_database_fp	/scratch/gdlab/databases/hmm/Pfam/1.0/Pfam-A.hmm
+tigrfam_database_fp	/scratch/gdlab/databases/hmm/TIGRFAM/12.0/TIGRFAMs_12.0_HMM.LIB

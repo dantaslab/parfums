@@ -1,0 +1,51 @@
+######################################################################################
+#                                                                                    #
+# Created by:       Manish Boolchandani                                              #
+# Creation Date:    2016/05/12                                                       #
+# Description:      Configuration file for PARFuMS run                               #
+#                                                                                    # 
+######################################################################################
+#                                                                                    #
+#------------------------------------------------------------------------------------#
+# Preprocessing and demultiplex illumina reads using barcode file                    #
+#------------------------------------------------------------------------------------#
+FW_file : /scratch/gdlab/manish/parfums/demo/rawdata/lane1_NoIndex_FW.fastq
+RC_file : /scratch/gdlab/manish/parfums/demo/rawdata/lane1_NoIndex_RC.fastq
+BC_file : /scratch/gdlab/manish/parfums/demo/01_barcode_mappingfile.txt
+DIR :     /scratch/gdlab/manish/parfums/demo/07_testrun_MB
+MAX_READ : 4000000
+barcode_pos : bol
+unmatch_disp : no
+#
+#------------------------------------------------------------------------------------#
+# Input sequences for Adapter trimming                                               #
+#------------------------------------------------------------------------------------#
+#
+adapA : AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGGTTG
+adapB : AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTG
+endVec1 :  GACCTCGAGGGGGGGCCCGGTACCTTTCTCCTCTTTAATGAATTCGGXXXXAGATCGGAAGAGCG
+endVec1R : CGCTCTTCCGATCTYYYYCCGAATTCATTAAAGAGGAGAAAGGTACCGGGCCCCCCCTCGAGGTC
+endVec2 :  GACGGTATCGATAAGCTTGATATCGAXXXXAGATCGGAAGAGCG
+endVec2R : CGCTCTTCCGATCTYYYYTCGATATCAAGCTTATCGATACCGTC
+#
+#------------------------------------------------------------------------------------#
+# Cross_Match input:                                                                 #
+#------------------------------------------------------------------------------------#
+save_tmpfiles : yes
+#
+#------------------------------------------------------------------------------------#
+# Input for removing vector                                                          #
+#------------------------------------------------------------------------------------#
+vecfile : /opt/apps/labs/gdlab/software/parfums/1.0/datasets/RevVector.fas
+#
+#------------------------------------------------------------------------------------#
+# Input for PhiX trimming                                                            #
+#------------------------------------------------------------------------------------#
+phixDIR : /opt/apps/labs/gdlab/software/parfums/1.0/datasets/PhiX.fna
+#
+#
+#------------------------------------------------------------------------------------#
+# Mapping File for Annotation required to run ResFam                                 #
+#------------------------------------------------------------------------------------#
+resANNOTATE : /scratch/gdlab/manish/parfums/demo/02_annotation_mappingfile.txt
+#
