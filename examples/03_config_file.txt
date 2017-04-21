@@ -1,0 +1,54 @@
+######################################################################################
+#                                                                                    #
+# Created by:       Manish Boolchandani                                              #
+# Creation Date:    2016/05/25							     #
+# Version: 	    1.0	                                                     #
+# Description:      Configuration file for PARFuMS run                               #
+#                                                                                    # 
+######################################################################################
+#                                                                                    #
+#------------------------------------------------------------------------------------#
+# Preprocessing and demultiplex illumina reads using barcode file                    #
+#------------------------------------------------------------------------------------#
+FW_file : examples/seqdata/lane1_NoIndex_FW.fastq 
+RC_file : examples/seqdata/lane1_NoIndex_RC.fastq 
+BC_file : examples/01_barcode_mappingfile.txt
+DIR :     examples/170215_testrun_MB
+MAX_READ : 4000000
+barcode_pos : bol
+unmatch_disp : no
+#
+#------------------------------------------------------------------------------------#
+# Mapping File for Annotation required to run ResFam				     #
+#------------------------------------------------------------------------------------#
+resANNOTATE : examples/02_annotation_mappingfile.txt
+#
+#------------------------------------------------------------------------------------#
+# Input sequences for Adapter trimming                                               #
+#------------------------------------------------------------------------------------#
+adapA :	AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGGTTG
+adapB : AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTG
+endVec1 :  GACCTCGAGGGGGGGCCCGGTACCTTTCTCCTCTTTAATGAATTCGGXXXXAGATCGGAAGAGCG
+endVec1R : CGCTCTTCCGATCTYYYYCCGAATTCATTAAAGAGGAGAAAGGTACCGGGCCCCCCCTCGAGGTC
+endVec2 :  GACGGTATCGATAAGCTTGATATCGAXXXXAGATCGGAAGAGCG
+endVec2R : CGCTCTTCCGATCTYYYYTCGATATCAAGCTTATCGATACCGTC
+#
+#------------------------------------------------------------------------------------#
+# Cross_Match input:                                                                 #
+#------------------------------------------------------------------------------------#
+save_tmpfiles : yes
+#
+#------------------------------------------------------------------------------------#
+# Path to COG database		                                                     #
+#------------------------------------------------------------------------------------#
+DB_link : /scratch/gdlab/manish/parfums/software/1.1.0/datasets
+#------------------------------------------------------------------------------------#
+# Input for removing vector                                                          #
+#------------------------------------------------------------------------------------#
+vecfile : /scratch/gdlab/manish/parfums/software/1.1.0/datasets/RevVector.fas
+#
+#------------------------------------------------------------------------------------#
+# Input for PhiX trimming                                                            #
+#------------------------------------------------------------------------------------#
+phixDIR : /scratch/gdlab/manish/parfums/software/1.1.0/datasets/PhiX.fna
+#
