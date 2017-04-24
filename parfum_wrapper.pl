@@ -5,7 +5,7 @@
 #   Author: Manish Boolchandani
 #   Date: 2016/05/20
 #   Description: PARFuMs Wrapper program
-#   Version: 2.0
+#   Version: 1.1.0
 #   Command Use: perl parfumWrapper.pl dir OutputFiles --step (1:3|[1-4]|0)
 #
 #########################################################
@@ -22,7 +22,7 @@ use Capture::Tiny ':all';
 use PARFuMs_Subs;
 
 #Global variables for command line
-my $VERSION = "1.0";
+my $VERSION = "1.1.0";
 my ($outputDir,$stepIn,$configPath);
 my %config;
 my @procStep;
@@ -304,7 +304,7 @@ sub makeOutputDir {
 sub usage {
 print<<EOF;
 
-PARFUMS version $VERSION, by Manish Boolchandani (manish\@wustl.edu), 11feb2015
+PARFUMS version $VERSION, by Manish Boolchandani (manish\@wustl.edu),
 This program is a wrapper to run all steps of the PARFUMS pipeline.
 
 Usage: perl parfum_wrapper.pl --config [CONFIG_FILE] --step [1:5|0|N1:N2];
