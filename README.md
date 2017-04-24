@@ -1,6 +1,6 @@
 ##############################################################
 #                                                            #
-# How To Run PARFuMS (v1.0, newer version) on HTCF Cluster   #
+# How To Run PARFuMS (v1.1.0, newer version) on HTCF Cluster   #
 #                                                            #
 ##############################################################
 
