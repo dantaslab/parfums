@@ -9,7 +9,6 @@ Note: PARFuMS pipleline was modified and recoded in order to make it work on the
 ==================================
 1. Requirements: 
 ==================================
-
 	
 	1.1 Load parfum module
 	------------------------
