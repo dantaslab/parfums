@@ -1,15 +1,9 @@
-##############################################################
-#                                                            #
-# How To Run PARFuMS (v1.1.0, newer version) on HTCF Cluster   #
-#                                                            #
-##############################################################
 
+# How To Run PARFuMS (v1.1.0, newer version) on HTCF Cluster   #
 Note: PARFuMS pipleline was modified and recoded in order to make it work on the HTCF cluster. All the parameters are kept same as the previous version. 
 
-==================================
-1. Requirements: 
-==================================
-	
+# 1. Requirements: 
+
 	1.1 Load parfum module
 	------------------------
 
@@ -40,9 +34,9 @@ Note: PARFuMS pipleline was modified and recoded in order to make it work on the
  
 	Note: Most of this information remains unchanged during different runs. You might only need to change these variables FW_file, RC_file, BC_file, resAnnotate path in most cases.
 
-===================================
-2. Usage: 
-===================================
+
+# 2. Usage: 
+
 
 	perl parfum_wrapper.pl --config [CONFIG_FILE] --step [1:6|0|]  
 
@@ -74,9 +68,8 @@ Note: PARFuMS pipleline was modified and recoded in order to make it work on the
  	Step 6: Annotation
 
 
-====================================
-3. Demo: 
-====================================
+
+# 3. Demo: 
 
 	See "examples" folder for a demo run. The folder "01_testrun" within examples directory contains sequence files, configuration file, scripts to run parfums as well as  output directory. 
 
